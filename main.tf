@@ -1,9 +1,12 @@
 resource "local_file" "pet" {
-  filename = "./deploy/pet.txt"
-  content="We love pets"
+  filename = var.filename
+  content=var.content
 }
-resource "local_file" "cat" {
-  filename = "./deploy/cat.txt"
-  content="My favorite pet is Mr. Whiskers"
-}
+
  
+
+ resource "random_pet" "my-pet" {
+   prefix = var.prefix
+   separator = var.separator
+   length = var.length
+ }
