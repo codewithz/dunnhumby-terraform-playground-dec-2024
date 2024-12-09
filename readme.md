@@ -12,11 +12,14 @@ terraform apply -var "separator=--"
 
 
 ```bash 
-PS J:\Zartab\Trainings\2024\B-18 Terraform Training Dunnhumby DEc 2024\terraform\two> echo %TF_VAR_separator% 
-PS J:\Zartab\Trainings\2024\B-18 Terraform Training Dunnhumby DEc 2024\terraform\two> set TF_VAR_filename=./deploy/pet1.txt  
-PS J:\Zartab\Trainings\2024\B-18 Terraform Training Dunnhumby DEc 2024\terraform\two> set TF_VAR_separator=#  
-PS J:\Zartab\Trainings\2024\B-18 Terraform Training Dunnhumby DEc 2024\terraform\two> terraform apply
+"J:\Zartab\Trainings\2024\B-18 Terraform Training Dunnhumby DEc 2024\terraform\two> echo %TF_VAR_separator% 
+J:\Zartab\Trainings\2024\B-18 Terraform Training Dunnhumby DEc 2024\terraform\two> set TF_VAR_filename=./deploy/pet1.txt  
+J:\Zartab\Trainings\2024\B-18 Terraform Training Dunnhumby DEc 2024\terraform\two> set TF_VAR_separator=#  
+J:\Zartab\Trainings\2024\B-18 Terraform Training Dunnhumby DEc 2024\terraform\two> terraform apply"
 
+
+```bash
+terraform apply -var-file variables-prod.tfvars
 
 
 
