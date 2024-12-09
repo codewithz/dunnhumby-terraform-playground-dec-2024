@@ -12,6 +12,7 @@ variable "content" {
 
 variable "prefix" {
   default = ["Mr","Mrs","Sir"]
+#             0    1      2
   type = list(string)
 }
 
