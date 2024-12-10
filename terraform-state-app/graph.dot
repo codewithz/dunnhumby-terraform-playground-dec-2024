@@ -1,0 +1,8 @@
+﻿digraph G {
+  rankdir = "RL";
+  node [shape = rect, fontname = "sans-serif"];
+  "local_file.cat" [label="local_file.cat"];
+  "local_file.pet" [label="local_file.pet"];
+  "random_pet.my-pet" [label="random_pet.my-pet"];
+  "local_file.pet" -> "random_pet.my-pet";
+}
