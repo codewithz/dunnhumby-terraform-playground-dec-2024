@@ -40,3 +40,7 @@ Follow these steps to install Terraform on an Ubuntu machine.
 
 - Ensure that your Ubuntu system is supported by the HashiCorp repository.
 - For more details, visit the [official Terraform installation guide](https://developer.hashicorp.com/terraform/tutorials/automation/install-cli).
+
+Youtube Video Link:
+
+https://youtu.be/gsyt5JmMvLs?si=1jMHzNMEGKnDCxuu
