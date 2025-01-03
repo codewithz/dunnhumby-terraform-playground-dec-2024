@@ -1,6 +1,4 @@
-variable "google_credentials" {
-  description = "Path to the GCP service account key file"
-}
+
 
 variable "project_id" {
   description = "The GCP project ID"
@@ -14,4 +12,5 @@ variable "region" {
 
 variable "bucket_name" {
   description = "Name of the GCS bucket"
+  default = "cwz_bucket_module"
 }

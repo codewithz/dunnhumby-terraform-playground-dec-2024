@@ -1,0 +1,42 @@
+stages:
+  - validate
+  - plan
+  - apply
+
+variables:
+  TF_ROOT: "."
+  GOOGLE_CREDENTIALS: "$CI_PROJECT_DIR/sa-key.json"
+
+before_script:
+  - apt-get update && apt-get install -y wget unzip curl git
+  - wget https://releases.hashicorp.com/terraform/1.5.0/terraform_1.5.0_linux_amd64.zip
+  - unzip terraform_1.5.0_linux_amd64.zip -d /usr/local/bin
+  - terraform -version
+  - echo "$GCP_SERVICE_ACCOUNT_KEY" > sa-key.json
+
+validate:
+  stage: validate
+  script: 
+    - cd $TF_ROOT
+    - terraform init
+    - terraform validate
+  
+plan:
+  stage: plan
+  script: 
+    - cd $TF_ROOT
+    - terraform init -input=false
+    - terraform plan -out=tfplan -input=false
+  
+  artifacts:
+    paths:
+      - $TF_ROOT/tfplan
+    when: always
+    
+apply:
+  stage: apply
+  script:
+    - cd $TF_ROOT
+    - terraform init 
+    - terraform apply -input=false tfplan
+  when: manual
